@@ -120,7 +120,7 @@ const Container = ({ data, nodeRef,renderLinks }) => {
         d3.select(this).raise().classed('active', true);
       })
       .on('drag', function (event) {
-        const container = containerRef.current.select('rect');
+        const container = d3.select(containerRef.current).select('rect');
         const containerRect = container.node().getBoundingClientRect();
         const [currentX, currentY] = d3.select(this).attr('transform').replace('translate(', '').replace(')', '').split(',');
         const relativePosition = {
