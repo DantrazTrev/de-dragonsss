@@ -1,5 +1,5 @@
-import React from 'react';
-import ContainerTree from './components/ContainerTree';
+// @ts-expect-error
+import ContainerTree from './components/ContainerTree.jsx';
 
 const App = () => {
   // Example data for the container tree

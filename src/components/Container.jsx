@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-const Container = ({ data, nodeRef,renderLinks }) => {
+const Container = ({ data, nodeRef,renderLinks }:{}) => {
   const containerRef = useRef(null);
 
   const renderContainer = () => {
     const g = d3.create('svg:g');
-    containerRef.current = g;
+    containerRef.current = g.node();
     g.attr('transform', `translate(${data.x}, ${data.y})`);
 
 
