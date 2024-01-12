@@ -47,12 +47,6 @@ const ContainerTree = ({ data }) => {
           linksRef.current.push(`${source.data.name}->${target.data.name}`);
 
         }
-
-
-        
-        
-
-
         
       })
     }
@@ -93,8 +87,6 @@ const ContainerTree = ({ data }) => {
           });
 
           renderLinks();
-
-      
 
           return () => {
             treeGroupRef.current.selectAll(".node").each(function (d) {

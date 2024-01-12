@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-const Container = ({ data, nodeRef,renderLinks }:{}) => {
+const Container = ({ data, nodeRef,renderLinks }) => {
   const containerRef = useRef(null);
 
   const renderContainer = () => {
@@ -68,7 +68,8 @@ const Container = ({ data, nodeRef,renderLinks }:{}) => {
   };
 
   const renderElements = () => {
-    const elements = containerRef.current.select('#elements');
+    if(!containerRef.current) return;
+    const elements = d3.select(containerRef.current).select('#elements');
 
     data.data.elements.forEach((element, index) => {
       renderElement(elements, element, index);
